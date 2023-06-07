@@ -1,12 +1,12 @@
-mkdir express_db_02
-cd express_db_02
-touch app.js
-npm init -y
-npm install express
-npm install nodemon --save-dev
-npm i dotenv
-npm i mysql2
-npm run dev 
+mkdir express_db_02 <br />
+cd express_db_02 <br />
+touch app.js <br />
+npm init -y <br />
+npm install express <br />
+npm install nodemon --save-dev <br />
+npm i dotenv <br />
+npm i mysql2 <br />
+npm run dev  <br />
 
 *package.json*
 ```js
@@ -18,10 +18,10 @@ npm run dev
   }, ...
 ```
 
-mysql> create database user;
-mysql> use user; 
-mysql> create table users (id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, firstname VARCHAR(80) NOT NULL, lastname VARCHAR(80) NOT NULL, username VARCHAR(12) NULL, email VARCHAR(125) NOT NULL, age INT NOT NULL);
-mysql> source ~/Documents/WILD/MySql/db-content-user.sql
+mysql> create database user; <br />
+mysql> use user; <br />
+mysql> create table users (id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, firstname VARCHAR(80) NOT NULL, lastname VARCHAR(80) NOT NULL, username VARCHAR(12) NULL, email VARCHAR(125) NOT NULL, age INT NOT NULL); <br />
+mysql> source ~/Documents/WILD/MySql/db-content-user.sql <br />
 
 *db-content-user.sql*
 ```sql
