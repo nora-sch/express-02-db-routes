@@ -1,3 +1,7 @@
+![users](./sample_img/api_users.png)
+![user](./sample_img/api_users_2.png)
+![user doesn't exist](./sample_img/api_users_notfound.png)
+
 mkdir express_db_02 <br />
 cd express_db_02 <br />
 touch app.js <br />

@@ -27,4 +27,15 @@ router.get("/:id", (req, res) => {
   });
 });
 
+// const getUserById = (req, res) => {
+//   const id = parseInt(req.params.id);
+
+//   database
+//     .query("SELECT * FROM users WHERE id=?", [id])
+//     .then(([user]) => {
+//       user[0] != null ? res.status(200).json(user[0]) : res.status(404).send("Page not found");
+//     })
+//     .catch(err => res.status(500).send("Error retrieving data from database"));
+// }
+
 module.exports = router;
