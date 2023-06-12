@@ -47,6 +47,6 @@ INSERT INTO `user`.`users` (`firstname`, `lastname`, `username`, `email`, `age`)
 ![user post error](./sample_img/user_post_error.png)
 
 # ROUTE PUT
-![user put](./sample_img/user_put.png_)
-![user get after put](./sample_img/user_get_3.png_)
+![user put](./sample_img/user_put.png)
+![user get after put](./sample_img/user_get_3.png)
 ![user put](./sample_img/user_put_error.png)
