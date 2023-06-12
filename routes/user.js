@@ -14,6 +14,8 @@ const findAll = "SELECT * FROM users";
 const findById = "SELECT * FROM users where id = ?";
 const postOne =
   "INSERT INTO users (firstname, lastname, username, email, age) VALUES(?, ?, ?, ?, ?)";
+const updateOne =
+  "UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ?, age= ? WHERE id = ?";
 
 // ROUTE "/"
 router.get("/", (req, res) => {
@@ -54,6 +56,27 @@ router.get("/:id", (req, res) => {
       res.json({ error: err.sqlMessage });
     }
   });
+});
+
+router.put("/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const { firstname, lastname, username, email, age } = req.body;
+  dbConnection.query(
+    updateOne,
+    [firstname, lastname, username, email, age, id],
+    (err, result, fields) => {
+      console.log(result)
+      if (!err) {
+        if (result.affectedRows === 0) {
+          res.status(404).send("Not Found");
+        } else {
+          res.sendStatus(204);
+        }
+      } else {
+        res.status(500).send("Error editing the user");
+      }
+    }
+  );
 });
 
 // const getUserById = (req, res) => {
