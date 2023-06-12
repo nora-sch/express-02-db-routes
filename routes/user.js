@@ -2,8 +2,20 @@ const express = require("express");
 const router = express.Router();
 const dbConnection = require("../database/connection");
 
+// const userPostBodyExemple = {
+//   "firstname": "Nora",
+//   "lastname": "Sumane",
+//   "username": "nora-sch",
+//   "email": "norah@inbox.lv",
+//   "age": 36
+// } // for JSON body POSTMAN
+
 const findAll = "SELECT * FROM users";
 const findById = "SELECT * FROM users where id = ?";
+const postOne =
+  "INSERT INTO users (firstname, lastname, username, email, age) VALUES(?, ?, ?, ?, ?)";
+
+// ROUTE "/"
 router.get("/", (req, res) => {
   dbConnection.query(findAll, (err, result, fields) => {
     if (!err) {
@@ -13,6 +25,23 @@ router.get("/", (req, res) => {
     }
   });
 });
+
+router.post("/", (req, res) => {
+  const { firstname, lastname, username, email, age } = req.body;
+  dbConnection.query(
+    postOne,
+    [firstname, lastname, username, email, age],
+    (err, result, fields) => {
+      if (!err) {
+        res.location(`/${result.insertId}`).sendStatus(201);
+      } else {
+        res.status(500).send("Error saving the user");
+      }
+    }
+  );
+});
+
+// ROUTE "/:id"
 router.get("/:id", (req, res) => {
   dbConnection.query(findById, [req.params.id], (err, result, fields) => {
     if (!err) {

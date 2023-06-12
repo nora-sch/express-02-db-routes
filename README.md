@@ -40,3 +40,8 @@ INSERT INTO `user`.`users` (`firstname`, `lastname`, `username`, `email`, `age`)
 INSERT INTO `user`.`users` (`firstname`, `lastname`, `username`, `email`, `age`) VALUES ('Glenna', 'Reichert', 'Delphine', 'Chaim_McDermott@dana.io', 78);
 INSERT INTO `user`.`users` (`firstname`, `lastname`, `username`, `email`, `age`) VALUES ('Clementina', 'DuBuque', 'Moriah', 'Rey.Padberg@karina.biz', 62);
 ```
+
+# ROUTE POST
+![user post](./sample_img/user_post.png)
+![user get after post](./sample_img/user_get_2.png)
+![user post error](./sample_img/user_post_error.png)
